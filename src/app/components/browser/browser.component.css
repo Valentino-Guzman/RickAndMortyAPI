@@ -91,22 +91,20 @@ button {
 
 .errorMessage {
     display: flex;
-
     justify-content: center;
 
 }
-    p {
+
+p {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 15px;
     border-radius: 10px;
     width: 250px;
-    height: auto;
     background-color: #cefb7f;
     border: solid transparent;
     box-shadow: rgba(62, 74, 42, 0.752) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
+
 .pages {
     display: flex;
     width: 100%;
