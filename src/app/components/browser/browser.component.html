@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="browser">
+        <h1>Buscar personajes</h1>
+        <button [routerLink]="['']">Home</button>
+        <nav>
+            <input type="text" [(ngModel)]='name' placeholder="Buscar personaje...">
+            <button (click)="browser()">enviar</button>
+        </nav>
+    </div>
+    <div *ngIf="errorMessage" class="errorMessage">
+        <p>{{ errorMessage }}</p>
+      </div>
+    <div class="results">
+        <article *ngFor="let character of filterCharacters">
+            <div><img [src]="character.image" [alt]="character.name"></div>
+            <div class="descripcion">
+                <h2>{{character.name}}</h2> 
+                <span>{{character.status}}</span>
+                <span>{{character.gender}}</span>
+                <span>{{character.species}}</span>
+            </div>
+        </article>
+        <div class="pages" *ngIf="showButtons">
+            <button (click)="prevPage()">Anterior</button>
+            <button *ngIf="hasNextPage" (click)="nextPage()">Siguiente</button>
+        </div>
+    </div>
+</div>

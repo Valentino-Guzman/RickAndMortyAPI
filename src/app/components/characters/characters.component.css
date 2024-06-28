@@ -1,0 +1,86 @@
+.contenedor {
+    top: 0;
+    left: 0;
+    position: fixed; 
+    background-image: url('https://wallpapercave.com/wp/wp3277659.jpg');
+    overflow-y: auto;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+h1 {
+    font-family: "Creepster";
+    font-size: 60px;
+    color: #7cb925;
+}
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;   
+    margin: 0.75rem;
+
+}
+
+button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    height: 25px;
+    font-family: 'Creepster', sans-serif;
+    background-color: #cefb7f;
+    color: #97ce4c;
+    border: solid transparent;
+    box-shadow: rgba(62, 74, 42, 0.752) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+button:hover {
+    background-color: #74a224;
+    cursor: pointer;
+}
+
+.results article {
+    display: flex;
+    width: 600px;;
+    height: 220px;
+    background-color: #cefb7f;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    margin: 0.75rem;
+    box-shadow: rgba(62, 74, 42, 0.752) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-image 0.5s ease;
+}
+    
+.results article:hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 16px 0px;
+    background-image: linear-gradient(135deg, #74a224, #97ce4c); 
+}
+
+.results img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.descripcion {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.descripcion span {
+    padding-bottom: 5px;
+}
+
+.pages {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
