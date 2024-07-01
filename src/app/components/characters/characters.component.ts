@@ -2,20 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { RickandmortyService } from '../../services/rickandmorty.service';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
-
+import { Characters } from '../../interfaces/characters';
 
 @Component({
-  selector: 'app-characters',
-  standalone: true,
-  imports: [NgFor, RouterLink],
-  templateUrl: './characters.component.html',
-  styleUrl: './characters.component.css'
+    selector: 'app-characters',
+    standalone: true,
+    templateUrl: './characters.component.html',
+    styleUrl: './characters.component.css',
+    imports: [NgFor, RouterLink]
 })
 export class CharactersComponent implements OnInit {
 
-  characters:any[] = [];
-  prev:string = ''
-  next:string = '';
+  characters:Characters[] = [];
   page: number = 1;
 
   constructor(private rickandmortyService: RickandmortyService) {}
@@ -25,11 +23,12 @@ export class CharactersComponent implements OnInit {
   }
 
   showCharacters() {
-    this.rickandmortyService.getCharacters(this.page).subscribe((data) => {
+    this.rickandmortyService.getCharacters(this.page).subscribe((data:any) => {
       this.characters = data.results;
-      console.log(this.characters)
+      console.log(this.characters);
     });
   }
+ 
   nextPage() {
     this.page++
     this.showCharacters();

@@ -3,6 +3,7 @@ import { RickandmortyService } from '../../services/rickandmorty.service';
 import { FormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Characters } from '../../interfaces/characters';
 @Component({
   selector: 'app-browser',
   standalone: true,
@@ -11,16 +12,18 @@ import { RouterLink } from '@angular/router';
   styleUrl: './browser.component.css'
 })
 export class BrowserComponent {
-  filterCharacters: any[] = [];
+
+  filterCharacters: Characters[] = [];
   name: string = '';
   page: number = 1;
   errorMessage: string = '';
   hasNextPage:boolean = true;
   showButtons: boolean = false;
+
   constructor(private rickandmortyService: RickandmortyService) {}
 
- browser() {
-  this.rickandmortyService.browser(this.name, this.page).subscribe((data) =>{
+  browser() {
+    this.rickandmortyService.browser(this.name, this.page).subscribe((data:any) =>{
       this.filterCharacters = data.results;
       this.showButtons = true;
       this.hasNextPage = true;
@@ -34,14 +37,14 @@ export class BrowserComponent {
     } 
   });
  }
- nextPage() {
-  this.page++
-  this.browser();
+  nextPage() {
+    this.page++
+    this.browser();
 }
   prevPage() {
-  if(this.page > 1) {
-    this.page--
-    this.browser();
+    if(this.page > 1) {
+      this.page--
+      this.browser();
   }
 }
 }

@@ -1,0 +1,20 @@
+<div class="contenedor">
+    <div class="header">
+       <h1>Localidades</h1> 
+        <button [routerLink]="['']">Home</button>
+    </div>
+<div class="results">
+        <article *ngFor="let location of locations">
+            <div class="descripcion">
+                <h2>{{location.name}}</h2> 
+                <span>{{location.dimension}}</span>
+                <span>{{location.type}}</span>
+                <span>{{location.created}}</span>
+            </div>
+        </article>
+        <div class="pages">
+            <button (click)="prevPage()">Anterior</button>
+            <button (click)="nextPage()">Siguiente</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="contenedor">
+    <div class="header">
+       <h1>Episodios</h1> 
+        <button [routerLink]="['']">Home</button>
+    </div>
+<div class="results">
+        <article *ngFor="let episode of episodes">
+            <div class="descripcion">
+                <h2>{{episode.name}}</h2> 
+                <span>{{episode.air_date}}</span>
+                <span>{{episode.episode}}</span>
+            </div>
+        </article>
+        <div class="pages">
+            <button (click)="prevPage()">Anterior</button>
+            <button (click)="nextPage()">Siguiente</button>
+        </div>
+    </div>
+</div>
