@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Characters } from '../interfaces/characters';
 import { Locations } from '../interfaces/locations';
 import { Episodes } from '../interfaces/episodes';
@@ -26,6 +26,11 @@ export class RickandmortyService {
   }
 
   getEpisodies(page:number): Observable<Episodes> {
-    return this.httpClient.get<Episodes>(`${this.urlAPI}episode?page=${page}`)
+    return this.httpClient.get<Episodes>(`${this.urlAPI}episode?page=${page}`);
   }
+
+  showDescription(): Observable<Characters> {
+    return this.httpClient.get<Characters>(`${this.urlAPI}character`);
+  }
+
 }

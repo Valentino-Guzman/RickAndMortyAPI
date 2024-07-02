@@ -1,0 +1,15 @@
+<div class="contenedor">
+    <h1 mat-dialog-title>{{ character.name }}</h1>
+        <mat-dialog-content>
+                <img [src]="character.image" [alt]="character.name">
+                <p>Este personaje aparecio en el/los episodio/s:</p>
+                    <ul>
+                        <li *ngFor="let episode of character.episode">{{ episode }}</li>
+                    </ul>
+        </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Atras</button>
+    </mat-dialog-actions>
+</div>
+    
+   

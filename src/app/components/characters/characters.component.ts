@@ -3,20 +3,22 @@ import { RickandmortyService } from '../../services/rickandmorty.service';
 import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Characters } from '../../interfaces/characters';
+import { DescriptionComponent } from "./description/description.component";
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
     selector: 'app-characters',
     standalone: true,
     templateUrl: './characters.component.html',
     styleUrl: './characters.component.css',
-    imports: [NgFor, RouterLink]
+    imports: [NgFor, RouterLink, DescriptionComponent]
 })
 export class CharactersComponent implements OnInit {
 
   characters:Characters[] = [];
   page: number = 1;
 
-  constructor(private rickandmortyService: RickandmortyService) {}
+  constructor(private rickandmortyService: RickandmortyService, private matDialog: MatDialog ) {}
 
   ngOnInit() {
     this.showCharacters();
@@ -28,7 +30,15 @@ export class CharactersComponent implements OnInit {
       console.log(this.characters);
     });
   }
- 
+
+  openDescription(character: Characters) {
+    this.matDialog.open(DescriptionComponent, {
+      height: 'auto',
+      width: '400px',
+      data: character
+    });
+  }
+
   nextPage() {
     this.page++
     this.showCharacters();

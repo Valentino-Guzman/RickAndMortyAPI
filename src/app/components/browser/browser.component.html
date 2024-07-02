@@ -20,6 +20,7 @@
                 <span>{{character.species}}</span>
             </div>
         </article>
+       
         <div class="pages" *ngIf="showButtons">
             <button (click)="prevPage()">Anterior</button>
             <button *ngIf="hasNextPage" (click)="nextPage()">Siguiente</button>

@@ -5,16 +5,16 @@
         <button [routerLink]="['/browser']">Buscar personajes</button>
     </div>
 <div class="results">
-        <article *ngFor="let character of characters">
+    <article *ngFor="let character of characters">
             <div><img [src]="character.image" [alt]="character.name"></div>
             <div class="descripcion">
                 <h2>{{character.name}}</h2> 
                 <span>{{character.status}}</span>
                 <span>{{character.gender}}</span>
                 <span>{{character.species}}</span>
+                <button (click)="openDescription(character)">Abrir detalles</button>
             </div>
         </article>
-        
         <div class="pages">
             <button (click)="prevPage()">Anterior</button>
             <button (click)="nextPage()">Siguiente</button>

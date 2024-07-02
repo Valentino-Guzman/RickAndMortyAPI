@@ -1,0 +1,26 @@
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: hidden;
+    background-color: #cefb7f;
+    scrollbar-color: #6c9723 rgb(18, 36, 21);
+    border: 1px solid #cefb7f;
+}
+
+button {
+    font-family: 'Creepster', sans-serif;
+    background-color: #cefb7f;
+    color: #97ce4c;
+    border: solid transparent;
+    box-shadow: rgba(62, 74, 42, 0.752) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #74a224;
+    cursor: pointer;
+}
+
+

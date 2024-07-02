@@ -4,12 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Characters } from '../../interfaces/characters';
+import { DescriptionComponent } from "../characters/description/description.component";
 @Component({
-  selector: 'app-browser',
-  standalone: true,
-  imports: [FormsModule, NgFor, NgIf, RouterLink],
-  templateUrl: './browser.component.html',
-  styleUrl: './browser.component.css'
+    selector: 'app-browser',
+    standalone: true,
+    templateUrl: './browser.component.html',
+    styleUrl: './browser.component.css',
+    imports: [FormsModule, NgFor, NgIf, RouterLink, DescriptionComponent]
 })
 export class BrowserComponent {
 
